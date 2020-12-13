@@ -74,15 +74,37 @@ console.log(symbolarray);
 //Success after some deep digging in w3schools fromCharCode and a few YouTube samples!  THere is a way to make this cleaner and DRY, but I won't work on this unless I have time.
 
 
-  //Step 3: Validate input, make sure at least 1 item is selected
+//Step 3: Validate input, make sure at least 1 item is selected
 
-if (lowercase && uppercase && spChar && number) false; {
-alert ("Please start over. You must select at least 1 condition (lower case, upper case, special character, or number)");
-
+if (lowercase) "0" {
+ && (uppercase) "0";
 }
 
-  //Step 4: Create password using input requirements
+//spChar false,
+//number false,
 
- // function generatePassword () {
+alert("Please start over. You must select at least 1 condition (lower case, upper case, special character, or number)");
+}
+  alert("Password complete");
+}
 
-  //Step 5: alert password
+//Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
+var pw2;
+var temporarypw;
+
+function generatePassword(pwLength, lowercase, uppercase, spChar, number) {
+  if (uppercase) true; charCodes.concat(uppercase2);
+  if (lowercase) true; charCodes.concat(lowercase2);
+  if (spChar) true; charCodes.concat(symbolarray2);
+  if (number) true; charCodes.concat(numberarray2);
+
+  console.log(charCodes);
+
+  for (let i = 0; i < pwLength; i++); {
+    temporarypw = charCodes[Math.floor(Math.random() * pwLength)]
+
+
+    //Step 5: alert password
+
+  }
+}
