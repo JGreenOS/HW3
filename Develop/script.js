@@ -63,26 +63,23 @@ numberarray2 = numberarray;
 
 console.log(numberarray);
 
+var symbolarray = [];
+for (var i = 33; i < 48; i++) {
+  symbolarray.push(String.fromCharCode(i));
+}
+symbolarray2 = symbolarray;
+
+console.log(symbolarray);
 
 //Success after some deep digging in w3schools fromCharCode and a few YouTube samples!  THere is a way to make this cleaner and DRY, but I won't work on this unless I have time.
 
 
-
-
-
- //function buildArrays (lower, upper, number, specialchar) {
-   // var lower = array.LOWER_CHAR_CODES(65, 90);
-    //var lower2 = str.CharCodeAt(str.lower);
-    //var numbers = String.fromCharCode (48, 57);
-    //var speChar = String.fromCharCode (58, 63; 33, 47);
-
-    //console.log(lower2);
-
-
-
-
-
   //Step 3: Validate input, make sure at least 1 item is selected
+
+if (lowercase && uppercase && spChar && number) false; {
+alert ("Please start over. You must select at least 1 condition (lower case, upper case, special character, or number)");
+
+}
 
   //Step 4: Create password using input requirements
 
