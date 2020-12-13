@@ -27,39 +27,44 @@ var spChar = confirm("Do you want special characters? Click Enter for Yes, Cance
 var number = confirm("Do you want numbers? Click Enter for Yes, Cancel for No")
 
 // Checks to make sure input is in the right format
-//console.log(pwLength);
-//console.log(lowercase);
-//console.log(uppercase);
-//console.log(spChar); 
-//console.log(number);
+console.log(pwLength);
+console.log(lowercase);
+console.log(uppercase);
+console.log(spChar);
+console.log(number);
 
 
-  //Step 2: select character from ASCII sets - lower, upper, numbers, and special characters
+//Step 2: select character from ASCII sets - lower, upper, numbers, and special characters
 
-  //Experiment: Using a function to make the array; I found this in researching "push" and building arrays and wanted to see if I could do it.
- 
-  //function arrayLowToHigh(low, high) {
-   // const array = []
-   // for (let i = low; i <= high; i ++)
-   //  {
-   //   array.push(i)
-///}
-    //return array
- // }
+//Experiment: Using a function to make the array; I found this in researching "push" when building arrays and wanted to see if I could do it.
 
-    //var lowercasearray = [String.fromCharCode(65-90)];
+var lowercasearray = [];
+for (var i = 97; i < 123; i++) {
+  lowercasearray.push(String.fromCharCode(i));
+}
+lowercase2 = lowercasearray;
 
-    var lowercasearray = [];
-    for (var i = 65; i < 91; i++)
-    {
-      lowercasearray.push(String.fromCharCode(i));
-    }
-    lowercase2 = lowercasearray;
-
-    console.log(lowercasearray);
-    
+console.log(lowercasearray);
 
 
+var uppercasearray = [];
+for (var i = 65; i < 91; i++) {
+  uppercasearray.push(String.fromCharCode(i));
+}
+uppercase2 = uppercasearray;
+
+console.log(uppercasearray);
+
+var numberarray = [];
+for (var i = 48; i < 58; i++) {
+  numberarray.push(String.fromCharCode(i));
+}
+numberarray2 = numberarray;
+
+console.log(numberarray);
+
+
+//Success after some deep digging in w3schools fromCharCode and a few YouTube samples!  THere is a way to make this cleaner and DRY, but I won't work on this unless I have time.
 
 
 
@@ -72,9 +77,9 @@ var number = confirm("Do you want numbers? Click Enter for Yes, Cancel for No")
     //var speChar = String.fromCharCode (58, 63; 33, 47);
 
     //console.log(lower2);
- 
 
-  
+
+
 
 
   //Step 3: Validate input, make sure at least 1 item is selected
