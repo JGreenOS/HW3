@@ -1,14 +1,17 @@
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-var password = generatePassword();
-var passwordText = document.querySelector("#password");
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
 
-passwordText.value = password;
+  passwordText.value = password;
+
+}
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 //Step 1: prompt for length of password, set pwLength variable and prompt for number of characters in pw between 8 and 128.  Change input from string to number.
 
@@ -63,31 +66,29 @@ if (!pwLength) {
 }
 
 //Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
+var makePassword = "";
+var temporarypw = "";
+var passwordText = "";
 
 function generatePassword() {
   if (lowercase && uppercase && spChar && number)
-  makePassword = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
+    makePassword = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
 
   else if (lowercase && uppercase && spChar)
-  makePassword = lowercasearray.concat(uppercasearray, spChararray);
+    makePassword = lowercasearray.concat(uppercasearray, spChararray);
 
   else if (lowercase && uppercase)
-  makePassword = lowercasearray.concat(uppercasearray);
+    makePassword = lowercasearray.concat(uppercasearray);
 
   else if (uppercase && spChar && number)
-  makePassword = uppercasearray.concat(spChararray, numberarray);
+    makePassword = uppercasearray.concat(spChararray, numberarray);
 
   else if (spChar && number)
-  makePassword = spChararray.concat(numberarray);
+    makePassword = spChararray.concat(numberarray);
 }
-
-  
-
-  for (let i = 0; i < pwLength; i++); {
-    temporarypw = makePassword[Math.floor(Math.random() * pwLength)]
+for (let i = 0; i < pwLength; i++); {
+  temporarypw = makePassword[Math.floor(Math.random() * pwLength)];
+  passwordText.push(temporarypw);
+}
 console.log(temporarypw);
-
-    //Step 5: alert password
-
-  }
-}
+console.log(makePassword);
