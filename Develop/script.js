@@ -4,11 +4,11 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-//function writePassword() {
-//var password = generatePassword();
-//var passwordText = document.querySelector("#password");
+function writePassword() {
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
 
-//passwordText.value = password;
+passwordText.value = password;
 
 //Step 1: prompt for length of password, set pwLength variable and prompt for number of characters in pw between 8 and 128.  Change input from string to number.
 
@@ -26,12 +26,6 @@ var uppercase = confirm("Do you want uppercase characters? Click Enter for Yes, 
 var spChar = confirm("Do you want special characters? Click Enter for Yes, Cancel for No")
 var number = confirm("Do you want numbers? Click Enter for Yes, Cancel for No")
 
-// Checks to make sure input is in the right format
-//console.log(pwLength);
-//console.log(lowercase);
-//console.log(uppercase);
-//console.log(spChar);
-//console.log(number);
 
 
 //Step 2: select character from ASCII sets - lower, upper, numbers, and special characters
@@ -66,60 +60,34 @@ for (var i = 33; i < 48; i++) {
 if (!pwLength) {
   alert("You must select a number between 8 and 128");
 
-
-{
-
-//alert("Please start over. You must select at least 1 condition (lower case, upper case, special character, or number)");
 }
-
 
 //Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
 
+function generatePassword() {
+  if (lowercase && uppercase && spChar && number)
+  makePassword = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
 
-var nuls = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
+  else if (lowercase && uppercase && spChar)
+  makePassword = lowercasearray.concat(uppercasearray, spChararray);
 
-var nul = lowercasearray.concat(uppercasearray, numberarray);
+  else if (lowercase && uppercase)
+  makePassword = lowercasearray.concat(uppercasearray);
 
-var ul = lowercasearray.concat(uppercasearray);
+  else if (uppercase && spChar && number)
+  makePassword = uppercasearray.concat(spChararray, numberarray);
 
-var sul = lowercasearray.concat(uppercasearray, symbolarray);
-
-var us = uppercasearray.concat(symbolarray);
-
-var un = numberarray.concat(uppercasearray);
-
-var nus = numberarray.concat(uppercasearray, symbolarray);
-
-var ls = lowercasearray.concat(symbolarray);
-
-var ln = lowercasearray.concat(numberarray);
-
-var sn = symbolarray.concat(numberarray);
-
-
-
-//console.log(nuls);
-//console.log(nul);
-//console.log(ul);
-//console.log(sul);
-//console.log(us);
-//console.log(un);
-//console.log(nus);
-//console.log(ls);
-//console.log(ln);
-//console.log(sn);
-
-
-//function generatePassword(pwLength, lowercase, uppercase, spChar, number) {
- //if (
+  else if (spChar && number)
+  makePassword = spChararray.concat(numberarray);
+}
 
   
 
-  //for (let i = 0; i < pwLength; i++); {
-    //temporarypw = charCodes[Math.floor(Math.random() * pwLength)]
-
+  for (let i = 0; i < pwLength; i++); {
+    temporarypw = makePassword[Math.floor(Math.random() * pwLength)]
+console.log(temporarypw);
 
     //Step 5: alert password
 
-  
+  }
 }
