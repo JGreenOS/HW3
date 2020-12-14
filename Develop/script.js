@@ -61,8 +61,10 @@ for (var i = 33; i < 48; i++) {
 //Success after some deep digging in w3schools fromCharCode and a few YouTube samples!  THere is a way to make this cleaner and DRY, but I won't work on this unless I have time.
 
 
-//Step 3: Validate input, make sure at least 1 item is selected
+//Step 3: Validate input, make sure at least 1 item is selected and a number is selected.
 
+if (!pwLength) {
+  alert("You must select a number between 8 and 128");
 
 
 {
@@ -120,3 +122,4 @@ var sn = symbolarray.concat(numberarray);
     //Step 5: alert password
 
   
+}
