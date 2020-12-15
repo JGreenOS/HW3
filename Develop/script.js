@@ -66,29 +66,29 @@ if (!pwLength) {
 }
 
 //Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
-var makePassword = "";
-var temporarypw = "";
-var passwordText = "";
+//ar makePassword = "";
+//var temporarypw = "";
+//var passwordText = "";
 
 function generatePassword() {
   if (lowercase && uppercase && spChar && number)
-    makePassword = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
+    password = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
 
   else if (lowercase && uppercase && spChar)
-    makePassword = lowercasearray.concat(uppercasearray, spChararray);
+    password = lowercasearray.concat(uppercasearray, spChararray);
 
   else if (lowercase && uppercase)
-    makePassword = lowercasearray.concat(uppercasearray);
+    password = lowercasearray.concat(uppercasearray);
 
   else if (uppercase && spChar && number)
-    makePassword = uppercasearray.concat(spChararray, numberarray);
+    password = uppercasearray.concat(spChararray, numberarray);
 
   else if (spChar && number)
-    makePassword = spChararray.concat(numberarray);
+    password = spChararray.concat(numberarray);
 }
 for (let i = 0; i < pwLength; i++); {
-  temporarypw = makePassword[Math.floor(Math.random() * pwLength)];
-  passwordText.push(temporarypw);
+  password = password[Math.floor(Math.random() * pwLength.length)];
 }
-console.log(temporarypw);
-console.log(makePassword);
+
+
+
