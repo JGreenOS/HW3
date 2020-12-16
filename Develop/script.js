@@ -17,13 +17,13 @@ generateBtn.addEventListener("click", writePassword);
 
 var pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
 
-if (pwLength <= 7) {
-  alert("Passwrod must be greater than 8 characters and less than 128 characters. Click refresh to continue");
+
+while (pwLength < 8 || pwLength > 128) {
+  alert("Password must be between 8-128 characters Try again");
+  var pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
+
 }
 
-else if (pwLength >= 129) {
-  alert("Password must be greater than 8 characters and less than 128 characters");
-}
 var lowercase = confirm("Do you want lowercase characters - Click OK for Yes, Cancel for No")
 var uppercase = confirm("Do you want uppercase characters? Click OK for Yes, Cancel for No")
 var spChar = confirm("Do you want special characters? Click OK for Yes, Cancel for No")
@@ -62,6 +62,7 @@ if (!pwLength) {
 }
 //Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
 
+
 function generatePassword(password) {
   if (lowercase && uppercase && spChar && number)
     password = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
@@ -77,20 +78,16 @@ function generatePassword(password) {
   else if (spChar && number)
     password = spChararray.concat(numberarray);
 
-  newFunction(password);
+
   for (let i = 0; i < pwLength; i++); {
-    password[Math.floor(Math.random() * pwLength.length)];}
+    password[Math.floor(Math.random() * pwLength.length)];
+  }
 
   return password;
 
 
-  function newFunction() {
-    for (let i = 0; i < pwLength; i++)
-      ; {
-      password[Math.floor(Math.random() * pwLength.length)];
-    }
-  }
 }
+
 
 
 
