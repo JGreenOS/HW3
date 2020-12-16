@@ -61,29 +61,36 @@ if (!pwLength) {
   alert("You must select a number between 8 and 128");
 }
 //Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
-var password;
 
 function generatePassword(password) {
   if (lowercase && uppercase && spChar && number)
     password = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
 
   else if (lowercase && uppercase && spChar)
-  password = lowercasearray.concat(uppercasearray, spChar);
-
+    password = lowercasearray.concat(uppercasearray, spChar);
   else if (lowercase && uppercase)
-  password = lowercasearray.concat(uppercasearray)
+    password = lowercasearray.concat(uppercasearray)
 
   else if (uppercase && spChar && number)
     password = uppercasearray.concat(spChararray, numberarray);
 
   else if (spChar && number)
     password = spChararray.concat(numberarray);
+
+  newFunction(password);
+  for (let i = 0; i < pwLength; i++); {
+    password[Math.floor(Math.random() * pwLength.length)];}
+
+  return password;
+
+
+  function newFunction() {
+    for (let i = 0; i < pwLength; i++)
+      ; {
+      password[Math.floor(Math.random() * pwLength.length)];
+    }
+  }
 }
 
 
-for (let i = 0; i < pwLength; i++); {
-  var newpassword = password[Math.floor(Math.random() * pwLength.length)];
-  password.push(newpassword)
-  console.log(password);
-  
-}
+
