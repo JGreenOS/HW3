@@ -18,17 +18,16 @@ generateBtn.addEventListener("click", writePassword);
 var pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
 
 if (pwLength <= 7) {
-  alert("Passwrod must be greater than 8 characters and less than 128 characters");
+  alert("Passwrod must be greater than 8 characters and less than 128 characters. Click refresh to continue");
 }
 
 else if (pwLength >= 129) {
   alert("Password must be greater than 8 characters and less than 128 characters");
 }
-var lowercase = confirm("Do you want lowercase characters - Click Enter for Yes, Cancel for No")
-var uppercase = confirm("Do you want uppercase characters? Click Enter for Yes, Cancel for No")
-var spChar = confirm("Do you want special characters? Click Enter for Yes, Cancel for No")
-var number = confirm("Do you want numbers? Click Enter for Yes, Cancel for No")
-
+var lowercase = confirm("Do you want lowercase characters - Click OK for Yes, Cancel for No")
+var uppercase = confirm("Do you want uppercase characters? Click OK for Yes, Cancel for No")
+var spChar = confirm("Do you want special characters? Click OK for Yes, Cancel for No")
+var number = confirm("Do you want numbers? Click OK for Yes, Cancel for No")
 
 
 //Step 2: select character from ASCII sets - lower, upper, numbers, and special characters
@@ -55,6 +54,10 @@ for (var i = 33; i < 48; i++) {
   symbolarray.push(String.fromCharCode(i));
 }
 
+console.log(lowercasearray);
+console.log(uppercasearray);
+console.log(numberarray);
+console.log(symbolarray);
 //Success after some deep digging in w3schools fromCharCode and a few YouTube samples!  THere is a way to make this cleaner and DRY, but I won't work on this unless I have time.
 
 
@@ -62,33 +65,25 @@ for (var i = 33; i < 48; i++) {
 
 if (!pwLength) {
   alert("You must select a number between 8 and 128");
-
 }
-
 //Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
-//ar makePassword = "";
-//var temporarypw = "";
-//var passwordText = "";
 
 function generatePassword() {
   if (lowercase && uppercase && spChar && number)
     password = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
+console.log(password);
 
-  else if (lowercase && uppercase && spChar)
-    password = lowercasearray.concat(uppercasearray, spChararray);
+  //else if (lowercase && uppercase && spChar)
+    //
+  //else if (lowercase && uppercase)
+   // password = lowercasearray.concat(uppercasearray);
 
-  else if (lowercase && uppercase)
-    password = lowercasearray.concat(uppercasearray);
+  //else if (uppercase && spChar && number)
+    //password = uppercasearray.concat(spChararray, numberarray);
 
-  else if (uppercase && spChar && number)
-    password = uppercasearray.concat(spChararray, numberarray);
-
-  else if (spChar && number)
-    password = spChararray.concat(numberarray);
+  //else if (spChar && number)
+    //password = spChararray.concat(numberarray);
 }
 for (let i = 0; i < pwLength; i++); {
   password = password[Math.floor(Math.random() * pwLength.length)];
 }
-
-
-
