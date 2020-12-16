@@ -53,13 +53,7 @@ var symbolarray = [];
 for (var i = 33; i < 48; i++) {
   symbolarray.push(String.fromCharCode(i));
 }
-
-console.log(lowercasearray);
-console.log(uppercasearray);
-console.log(numberarray);
-console.log(symbolarray);
 //Success after some deep digging in w3schools fromCharCode and a few YouTube samples!  THere is a way to make this cleaner and DRY, but I won't work on this unless I have time.
-
 
 //Step 3: Validate input, make sure at least 1 item is selected and a number is selected.
 
@@ -69,7 +63,7 @@ if (!pwLength) {
 //Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
 var password;
 
-function generatePassword() {
+function generatePassword(password) {
   if (lowercase && uppercase && spChar && number)
     password = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
 
@@ -77,16 +71,19 @@ function generatePassword() {
   password = lowercasearray.concat(uppercasearray, spChar);
 
   else if (lowercase && uppercase)
-  password = lowercasearray.concat(uppercasearray);
+  password = lowercasearray.concat(uppercasearray)
+
+  else if (uppercase && spChar && number)
+    password = uppercasearray.concat(spChararray, numberarray);
+
+  else if (spChar && number)
+    password = spChararray.concat(numberarray);
 }
 
-console.log(password)
-  //else if (uppercase && spChar && number)
-    //password = uppercasearray.concat(spChararray, numberarray);
-
-  //else if (spChar && number)
-    //password = spChararray.concat(numberarray);
 
 for (let i = 0; i < pwLength; i++); {
-  password = password[Math.floor(Math.random() * pwLength.length)];
+  var newpassword = password[Math.floor(Math.random() * pwLength.length)];
+  password.push(newpassword)
+  console.log(password);
+  
 }
