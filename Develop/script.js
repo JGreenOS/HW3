@@ -17,14 +17,15 @@ generateBtn.addEventListener("click", writePassword);
 
 var pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
 
+//Step 3: Validate input using while loop; fixed logic error that sent this into infinity.
 
 while (pwLength < 8 || pwLength > 128) {
-  alert("Password must be between 8-128 characters Try again");
+  alert("Password must be between 8-128 characters. Try again.");
   var pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
 
 }
 
-var lowercase = confirm("Do you want lowercase characters - Click OK for Yes, Cancel for No")
+var lowercase = confirm("Do you want lowercase characters? Click OK for Yes, Cancel for No")
 var uppercase = confirm("Do you want uppercase characters? Click OK for Yes, Cancel for No")
 var spChar = confirm("Do you want special characters? Click OK for Yes, Cancel for No")
 var number = confirm("Do you want numbers? Click OK for Yes, Cancel for No")
@@ -55,38 +56,44 @@ for (var i = 33; i < 48; i++) {
 }
 //Success after some deep digging in w3schools fromCharCode and a few YouTube samples!  THere is a way to make this cleaner and DRY, but I won't work on this unless I have time.
 
-//Step 3: Validate input, make sure at least 1 item is selected and a number is selected.
+//Step 3: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
 
-if (!pwLength) {
-  alert("You must select a number between 8 and 128");
-}
-//Step 4: Create password using input requirements  (Look for inputs to be true, concatenate the strings, then choose random number and fill the password until the variable pwLength is satisfied. 
-
-
-function generatePassword(password) {
+function generatePassword() {
   if (lowercase && uppercase && spChar && number)
-    password = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
+    allChars = lowercasearray.concat(uppercasearray, numberarray, symbolarray);
 
   else if (lowercase && uppercase && spChar)
-    password = lowercasearray.concat(uppercasearray, spChar);
+  allChars = lowercasearray.concat(uppercasearray, spChar);
+
   else if (lowercase && uppercase)
-    password = lowercasearray.concat(uppercasearray)
+  allChars = lowercasearray.concat(uppercasearray)
 
   else if (uppercase && spChar && number)
-    password = uppercasearray.concat(spChararray, numberarray);
+  allChars = uppercasearray.concat(spChararray, numberarray);
 
   else if (spChar && number)
-    password = spChararray.concat(numberarray);
+  allChars = spChararray.concat(numberarray);
 
 
-  for (let i = 0; i < pwLength; i++); {
-    password[Math.floor(Math.random() * pwLength.length)];
+  //for (let i = 0; i < pwLength; i++); {
+  //password[Math.floor(Math.random() * pwLength.length)];}
+
+  for (let i = 0; i < pwLength; i++) {
+    number = Math.random() * allChars.length;
+    Math.floor(number);
   }
-
   return password;
+    
+    //red = allChars(number);  
 
+    //console.log(number);
+    //console.log(red);
+    //console.log(allChars);
+    
+  }
+  //randomisze the lowercase.array(the whole thing)
+ 
 
-}
 
 
 
