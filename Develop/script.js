@@ -1,6 +1,7 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
-var passwordText = document.querySelector("#password");
+//var generateBtn = document.querySelector("#generate");
+
+var passLength = 0;
 
 //This area for user input
 
@@ -9,8 +10,8 @@ var userInputObject = {  //creates an object that will then be used in the rando
   charList: [], //initializes an empty array for derived allChars function.
 
   //beginning of function to get and store password length from user input.
-  getPassLength: function () {
-    var pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
+  getpassLength: function () {
+    pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters")); //prompts user for the number of characters in the password, converts the string to a number.
 
     while //loop to prompt user for the expected range of numbers to recover if the password length does not meet the minimums.
       (pwLength < 8 || pwLength > 128) { //if pwLength does not match the expected input, start loop for error recovery.
@@ -76,32 +77,28 @@ var userInputObject = {  //creates an object that will then be used in the rando
 }
 
 //when the write Password button is clicked in the user interface, gets the concatenated array based on user input.  Nested function to 
-generateBtn.addEventListener("click", function () { passwordText.value = generatePassword(); }); //nested function that passes the passwordText.value to the generate password function.
+var generateBtn = document.querySelector("#generate");
+
+function writePassword () {
+  var passwordText = document.querySelector("#password");
+  passwordText = generatePassword()
+  passwordText = password;
+}
+
+generateBtn.addEventListener("click", writePassword);
 
 function generatePassword () { //uses inputs to create the password, using the randomizer in the for loop.
 
-  var password = "";
-  var input = userInputObject.getPassLength().getAllChars(); //set variable to store the object, password length and the output of the derived and concatenated characters
-  var pwLength = input.passLength; //brings the number of characters from stored input into the function
+  var password = " ";
+  var input = userInputObject.getpassLength().getAllChars(); //set variable to store the object, password length and the output of the derived and concatenated characters
+  var pwLength = input.pwLength; //brings the number of characters from stored input into the function
   var listLength = input.charList.length; //brings the length of the char list so we know which range to select the random numbers.
 
   for (let i = 0; i < pwLength; i++) {
     var raw = Math.random() * listLength -1; //this uses the math random function multiplied by the listlength -1 to create the random numbers.
     var randomIndex = Math.floor(raw); //this creates the random indox numbers and rounds them down to an integer.
     password += input.charList[randomIndex];
-
+    console.log(raw);
     return password
   }
-}
-
-
-  //red = allChars(number);  
-//var writePassword = writePassword + number;
-  //console.log(number);
-  //console.log(red);
-  //console.log(allChars);
-
-  //randomisze the lowercase.array(the whole thing)
- //for (let i = 0; i < pwLength; i++); {
-  //password[Math.floor(Math.random() * pwLength.length)]
 }
