@@ -1,14 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var passwordText = document.querySelector("#password");
-var userInputObject = {
+var passwordTxt = document.querySelector("#password");
+var usrInputObject = {
   passLength: 0,
   charList: [],
-
   getPassLength: function () {
-    pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
-    while
-      (pwLength < 8 || pwLength > 128) {
+    var pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
+    while (pwLength < 8 || pwLength > 128) {
       alert("Password must be between 8-128 characters. Try again.");
       pwLength = Number(prompt("Enter the number of characters for your new password. Minimum is 8 characters and maximum is 128 characters"));
     }
@@ -61,10 +59,9 @@ var userInputObject = {
 generateBtn.addEventListener("click", function () {
   passwordTxt.value = generatePassword();
 });
-
 function generatePassword() { 
   var password = "";
-  var input = userInputObject.getPassLength().getAllChars(); 
+  var input = usrInputObject.getPassLength().getAllChars(); 
   var pwLength = input.passLength; 
   var listLength = input.charList.length; 
 
