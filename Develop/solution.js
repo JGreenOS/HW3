@@ -58,16 +58,17 @@ function generatePassword() {
   var input = usrInputObject.getPassLength().getAllChars();
   var pwLength = input.passLength;
   var listLength = input.charList.length;
-  console.log("password length..." + pwLength);
-  console.log("char list length..." + listLength);
-  console.log(input.charList);
+  //console.log("password length..." + pwLength);
+  //console.log("char list length..." + listLength);
+  //console.log(input.charList);
   for (let i = 0; i < pwLength; i++) {
     var raw = Math.random() * listLength - 1;
     var randomIndex = Math.floor(raw);
     password += input.charList[randomIndex];
-    console.log(raw);
-    console.log("random index for a char in the char list: " + randomIndex);
-    console.log("random character choice: " + input.charList[randomIndex]);
-    console.log("password at the current iteration: " + password);
+    //.log(raw);
+    //console.log("random index for a char in the char list: " + randomIndex);
+    //console.log("random character choice: " + input.charList[randomIndex]);
+    //console.log("password at the current iteration: " + password);
   }
-  return password;
+  return password
+}
